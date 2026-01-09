@@ -12,27 +12,22 @@
       stroke-linecap: square;
       stroke-linejoin: miter;
       stroke-dasharray: 2000;
-      stroke-dashoffset: 2000;
+      stroke-dashoffset: 0; 
       filter: drop-shadow(0 0 8px var(--matrix-green));
-      animation: draw-erase-loop 22s steps(120) infinite;
+      animation: draw-erase-loop 5s ease-in-out infinite;
     }
 
-    /* Logic-based Sequencing */
-    .t-body { animation-delay: 0s; }   /* Tabish Body */
-    .t-dots { animation-delay: 1.5s; } /* Tabish Dots */
-    
-    .s-body { animation-delay: 4.5s; } /* Shah Sheen+Alif */
-    .s-dots { animation-delay: 6s; }   /* Shah Dots */
-    .s-ha   { animation-delay: 7s; }   /* Shah Ha */
-
-    .m-main { animation-delay: 9.5s; } /* Mohsin Continuous */
-    .m-dot  { animation-delay: 13s; }  /* Mohsin Dot */
+    /* Staggered delays for the "Redraw" phase */
+    .t-body, .t-dots { animation-delay: 0s; }
+    .s-body, .s-dots, .s-ha { animation-delay: 0.5s; }
+    .m-main, .m-dot { animation-delay: 1s; }
 
     @keyframes draw-erase-loop {
-      0% { stroke-dashoffset: 2000; }
-      45% { stroke-dashoffset: 0; }    
-      75% { stroke-dashoffset: 0; }    
-      100% { stroke-dashoffset: 2000;} 
+      0% { stroke-dashoffset: 0; }     /* Starts Full */
+      20% { stroke-dashoffset: 0; }    /* Holds Full for 14 seconds */
+      40% { stroke-dashoffset: 2000; } /* Smooth Erase */
+      50% { stroke-dashoffset: 2000; } /* Brief pause at empty */
+      100% { stroke-dashoffset: 0; }   /* Smooth Redraw */
     }
 
     .terminal-text {
@@ -50,17 +45,18 @@
     }
   </style>
 
-  <text x="20" y="30" class="terminal-text">RESTORING_SHEEN... [SUCCESS]</text>
+  <!-- <text x="20" y="30" class="terminal-text">RESTORING_SHEEN... [SUCCESS]</text>
   <text x="20" y="50" class="terminal-text">COMPILED: تابش شاہ محسن</text>
-  <text x="820" y="30" class="terminal-text">>_ KERNEL_ACTIVE</text>
+  <text x="820" y="30" class="terminal-text">>_ KERNEL_ACTIVE</text> -->
 
   <g transform="translate(950, 100) scale(-1, 1)">
-
     <path class="stroke t-body" d="M 50,80 Q 50,110 100,110 L 100,0" /> 
     <rect class="stroke t-dots" x="65" y="60" width="5" height="5" />
     <rect class="stroke t-dots" x="85" y="60" width="5" height="5" />
     <path class="stroke t-body" d="M 150,80 L 170,105 L 190,80 L 210,105 L 230,80 L 250,110 L 280,150 L 380,150 L 410,80" /> 
-    <rect class="stroke t-dots" x="180" y="140" width="6" height="6" /> <rect class="stroke t-dots" x="190" y="40" width="5" height="5" /> <rect class="stroke t-dots" x="210" y="20" width="5" height="5" />
+    <rect class="stroke t-dots" x="180" y="140" width="6" height="6" /> 
+    <rect class="stroke t-dots" x="190" y="40" width="5" height="5" /> 
+    <rect class="stroke t-dots" x="210" y="20" width="5" height="5" />
     <rect class="stroke t-dots" x="230" y="40" width="5" height="5" />
 
     <path class="stroke s-body" d="M 450,80 L 470,105 L 490,80 L 510,105 L 530,80 L 550,110 L 580,110 L 580,0" />
@@ -78,7 +74,6 @@
       L 880,145 
       Q 930,145 930,185 Q 930,225 880,225 Q 830,225 830,185" />
     <rect class="stroke m-dot" x="885" y="185" width="6" height="6" />
-
   </g>
 
   <text x="500" y="310" text-anchor="middle" class="terminal-label">
