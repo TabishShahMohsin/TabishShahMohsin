@@ -20,22 +20,12 @@
     </td>
 
   <!-- Middle Stats (replaced with final section) -->
-  <td align="center" width="33%">
-    <!-- <img 
-      src="https://github-readme-stats.vercel.app/api?username=tabishshahmohsin&theme=github_dark&hide_border=false&include_all_commits=false&count_private=false" 
-      alt="GitHub Stats" 
-      height="80"
-    /><br/> -->
+<td align="center" width="33%">
     <img 
-      src="https://nirzak-streak-stats.vercel.app/?user=tabishshahmohsin&theme=github_dark&hide_border=false" 
+      src="https://github-readme-streak-stats.herokuapp.com/?user=TabishShahMohsin&theme=dark&hide_border=true&background=0d0d0d&ring=ffffff&fire=ffffff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=ffffff&dates=ffffff" 
       alt="Streak Stats" 
-      height="80"
+      height="165"
     />
-    <!-- <img 
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=tabishshahmohsin&theme=github_dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" 
-      alt="Top Languages" 
-      height="80"
-    /> -->
   </td>
 
   <!-- Right Stats -->
