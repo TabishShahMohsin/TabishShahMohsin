@@ -6,7 +6,7 @@
 
 **B.Tech Computer Engineering @ AMU (2024–28)**
 
-You may outsource your thinking but you can't outsource your understanding.
+You will never leave something for good, except that it would be replaced with something better.
 
 ---
 
